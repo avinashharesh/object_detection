@@ -1,4 +1,4 @@
-# Image Object Detection Web Service within a Containerised Environment in Clouds
+# Image Object Detection Web Service Within A Containerised Environment In Clouds
 ## Description and Objective
 This project aims to build a web-based system that we call CloudDetect. It will allow end-users to
 send an image to a web service hosted by Docker containers and receive a list of objects detected in their
