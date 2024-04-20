@@ -46,7 +46,7 @@ To manage multiple different types of clusters together, you need to be able to 
 
 ## Working
 URL for object detection:
-[Object Detection](http://130.162.193.76:30003/predict)
+[Object Detection]()
 
 For the app to work
 1. Open Postman
