@@ -17,7 +17,7 @@ class WebsiteUser(HttpUser):
             image_data = f.read()
         image_base64 = base64.b64encode(image_data).decode("utf-8")
 
-        payload = {"id": "1", "image": image_base64}
+        payload = {"id": image_file, "image": image_base64}
         headers = {"Content-Type": "application/json"}
 
         self.client.post("/predict", json=payload, headers=headers)
