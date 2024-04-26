@@ -52,4 +52,4 @@ For the app to work
 1. Open Postman
 2. Set the type of request as POST
 3. Set the body to raw-JSON
-4. Format of json file should be {"images":[{"id":id_image1,"image":base64_encoded_image1},{"id":id_image2,"image":base64_encoded_image2},....]}
+4. Format of json file should be {"id":id_image,"image":base64_encoded_image}
