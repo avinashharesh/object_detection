@@ -88,20 +88,18 @@ def do_prediction(image, net, LABELS):
 def predict():
     try:
         req_data = request.get_json()
-        images_data = req_data.get('images')
-        all_predictions = []
-        for image_data in images_data:
-            image_base64 = image_data.get('image')
-            image_bytes = base64.b64decode(image_base64)
-            image_np = np.frombuffer(image_bytes, np.uint8)
-            image = cv2.imdecode(image_np, cv2.IMREAD_COLOR)
-            predictions = do_prediction(image, nets, LABELS)
-            all_predictions.append({"id": image_data.get("id"), "objects": predictions})
-        logger.info("Predictions successfully generated.")
-        return jsonify(all_predictions)
+        image_base64 = req_data.get('image')
+        image_bytes = base64.b64decode(image_base64)
+        image_np = np.frombuffer(image_bytes, np.uint8)
+        image = cv2.imdecode(image_np, cv2.IMREAD_COLOR)
+        predictions = do_prediction(image, nets, LABELS)
+        logger.info("Prediction successfully generated.")
+        print({"id": req_data.get("id"), "objects": predictions})
+        return jsonify({"id": req_data.get("id"), "objects": predictions})
     except Exception as e:
         logger.error(f"Error occurred: {str(e)}")
         return jsonify({"error": str(e)})
+
 
     
 @app.route('/',methods=['GET'])
